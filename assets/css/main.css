@@ -34,41 +34,55 @@ section {
 }
 
 /* ── Header / Bio ── */
-.profile {
+.header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.profile img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
   border: 2px solid var(--border);
 }
 
-.profile-text h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+.info-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.profile-text p {
+.info-card h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.info-card .title {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.info-card .location {
   color: var(--muted);
-  font-size: 0.95rem;
-  margin-top: 0.15rem;
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 /* ── Links row ── */
 .links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem 1.25rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-size: 0.9rem;
 }
 
@@ -191,10 +205,23 @@ footer {
 }
 
 /* ── Responsive ── */
-@media (max-width: 540px) {
-  .profile {
+@media (max-width: 640px) {
+  .header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  .info-card {
+    align-items: center;
+  }
+
+  .links {
+    justify-content: center;
   }
 }
