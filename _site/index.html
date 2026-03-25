@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will Marella</title>
+  <meta name="description" content="Data Scientist · Biological Aging · Software">
+  <link rel="stylesheet" href="/portfolio/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+
+  <!-- ── Header ── -->
+  <div class="header">
+    <img src="/portfolio/assets/profpic.jpeg" alt="Will Marella" class="profile-pic">
+
+    <div class="info-card">
+      <h1>Will Marella</h1>
+      <p class="title">Senior Data Scientist — Columbia University Robert N. Butler Aging Center</p>
+      <p class="title">MPhil, Population Health Sciences, University of Cambridge · BA, Biology, Brown University</p>
+      <p class="location">New York, NY</p>
+
+      <nav class="links">
+        <a href="mailto:wm2551@cumc.columbia.edu">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="/portfolio/assets/WillMarella_CV.pdf" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          CV
+        </a>
+        <a href="https://www.linkedin.com/in/will-marella-3862921a9/" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/will-marella" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── About ── -->
+  <section>
+    <h2>About Me</h2>
+    <div class="about">
+      <p>
+        I'm a Senior Data Scientist at Columbia University's Robert N. Butler Aging Center, where I study biological aging.
+      </p>
+      <p>
+        I design hierarchical mixed-effects models to characterize aging trajectories across a broad range of biomarkers, and build machine learning models that compress these trajectories into aging measures that can be estimated from a single blood test.
+      </p>
+      <p>
+        These tools have direct applications in personalized medicine and clinical trial design. They serve as sensitive endpoints to detect whether an intervention is actually slowing the aging process.
+      </p>
+      <p>
+        This work has yielded a patented and licensed algorithm, with several publications in progress.
+      </p>
+      <p>
+        Outside of research, I build software. Tools to accelerate my own work, contributions to open-source projects I love, and experiments with new frameworks.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>FraminghamPACE</h3>
+          <div class="project-tags">
+            <span class="tag">Research</span>
+            <span class="tag green">Patented · Licensed</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-text">
+            <p>
+              An epigenetic clock trained on the Framingham Heart Study that measures biological age and pace of aging from DNA methylation data. Validated across multiple independent cohorts and licensed to TruDiagnostic for use in longevity diagnostics.
+            </p>
+            <div class="project-links">
+              <a href="/portfolio/assets/FraminghamPACE_Poster.pdf" target="_blank">→ Poster</a>
+            </div>
+          </div>
+          <img src="/portfolio/assets/FraminghamPACE_full_biomarker_spaghetti.png" alt="FraminghamPACE biomarker trajectories">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>QueryGaP</h3>
+          <div class="project-tags">
+            <span class="tag">AI Tool</span>
+            <span class="tag gray">Web App</span>
+          </div>
+        </div>
+        <p>
+          An AI-powered search tool for the NIH dbGaP database of genomics studies. Translates natural language queries into structured searches, making it easier to find relevant datasets for research. Built with rate limiting for public deployment.
+        </p>
+        <div class="project-links">
+          <a href="#" target="_blank">→ Site</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>ascii-dream</h3>
+          <div class="project-tags">
+            <span class="tag gray">CLI Tool</span>
+            <span class="tag gray">Fun</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-text">
+            <p>
+              A command-line tool that generates ASCII art from text prompts using Stable Diffusion. Built with Python and Modal for serverless GPU inference.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/will-marella/ascii-dream" target="_blank">→ GitHub</a>
+            </div>
+          </div>
+          <img src="/portfolio/assets/ascii-demo.gif" alt="ascii-dream demo">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>OpenCode Protect</h3>
+          <div class="project-tags">
+            <span class="tag gray">Security</span>
+            <span class="tag gray">Open Source</span>
+          </div>
+        </div>
+        <p>
+          OS-level sandboxing for OpenCode, an open-source AI coding assistant. Isolates agent execution using a restricted Unix user and filesystem permissions to prevent unintended side effects during agentic coding sessions.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/will-marella/opencode-protect" target="_blank">→ GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Latent Factor Allocation</h3>
+          <div class="project-tags">
+            <span class="tag">Research</span>
+            <span class="tag gray">Bayesian</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-text">
+            <p>
+              A Bayesian latent factor model for multi-omic data integration. Uses mean-field variational inference and partially collapsed Gibbs sampling to discover shared structure across high-dimensional biological datasets.
+            </p>
+            <div class="project-links">
+              <a href="#" target="_blank">→ GitHub</a>
+            </div>
+          </div>
+          <img src="/portfolio/assets/LFA-DGM.jpg" alt="LFA-DGM model diagram">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>Will Marella · Updated 2026</div>
+</footer>
+
+</body>
+</html>
