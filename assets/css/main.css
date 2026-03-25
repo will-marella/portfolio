@@ -152,6 +152,32 @@ h2 {
   flex-wrap: wrap;
 }
 
+.project-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.project-text {
+  max-width: 640px;
+}
+
+.project-content img {
+  width: 200px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+
+@media (max-width: 640px) {
+  .project-content {
+    grid-template-columns: 1fr;
+  }
+  .project-content img {
+    width: 100%;
+  }
+}
+
 .tag {
   font-size: 0.72rem;
   font-weight: 500;
@@ -175,7 +201,6 @@ h2 {
 .project-card p {
   font-size: 0.93rem;
   color: var(--muted);
-  max-width: 640px;
 }
 
 .project-links {
