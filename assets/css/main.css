@@ -1,0 +1,199 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #e0e0e0;
+  --bg: #fff;
+  --accent: #2563eb;
+  --max-width: 720px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  padding: 0 1.5rem;
+}
+
+/* ── Layout ── */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 0 6rem;
+}
+
+section {
+  margin-top: 3.5rem;
+}
+
+/* ── Header / Bio ── */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+
+.profile-text h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.profile-text p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+
+/* ── Links row ── */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* ── Section headings ── */
+h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── About ── */
+.about p {
+  color: var(--text);
+  font-size: 0.97rem;
+  margin-bottom: 0.75rem;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Project cards ── */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+}
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #f0f4ff;
+  color: #3b5bdb;
+  letter-spacing: 0.02em;
+}
+
+.tag.green {
+  background: #f0faf4;
+  color: #2f7a4e;
+}
+
+.tag.gray {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.project-card p {
+  font-size: 0.93rem;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.project-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ── */
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-size: 0.8rem;
+  color: #999;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
