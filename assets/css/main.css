@@ -67,7 +67,7 @@ main {
 }
 
 section {
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 
 /* ── Header / Bio ── */
@@ -75,9 +75,9 @@ section {
   display: flex;
   align-items: flex-start;
   gap: 3rem;
-  margin-bottom: 5rem;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .profile-pic {
