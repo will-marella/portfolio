@@ -259,7 +259,8 @@ h2 {
   max-width: 600px;
 }
 
-.project-content img {
+.project-content img,
+.project-content video {
   width: 220px;
   border-radius: 4px;
   /* Minimal rounded corner, almost sharp */
@@ -268,9 +269,16 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-.project-card:hover .project-content img {
+.project-card:hover .project-content img,
+.project-card:hover .project-content video {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Special styling for wide aspect ratio videos (like QueryGaP) */
+.project-content video.wide-video {
+  width: 340px;
+  /* Wider to accommodate 4:1 aspect ratio text output */
 }
 
 @media (max-width: 768px) {
@@ -279,9 +287,15 @@ h2 {
     gap: 2rem;
   }
 
-  .project-content img {
+  .project-content img,
+  .project-content video {
     width: 100%;
     max-width: 400px;
+  }
+
+  .project-content video.wide-video {
+    max-width: 100%;
+    /* Allow full width on mobile for better readability */
   }
 }
 
