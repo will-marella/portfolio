@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Ruby / Gem dependencies
+vendor/
+.bundle/
+
+# Jekyll build directories
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
