@@ -65,7 +65,7 @@ title: Will Marella
     <h2>Projects</h2>
     <div class="projects">
 
-      <div class="project-card">
+      <div class="project-card text-wrap">
         <div class="project-header">
           <h3>FraminghamPACE</h3>
           <div class="project-tags">
@@ -74,22 +74,24 @@ title: Will Marella
           </div>
         </div>
         <div class="project-content">
-          <div class="project-text">
-            <p>
-              An epigenetic clock trained on the Framingham Heart Study that measures biological age and pace of aging
-              from DNA methylation data. Validated across multiple independent cohorts and licensed to TruDiagnostic for
-              use in longevity diagnostics.
-            </p>
-            <div class="project-links">
-              <a href="{{ '/assets/FraminghamPACE_Poster.pdf' | relative_url }}" target="_blank">→ Poster</a>
-            </div>
-          </div>
           <img src="{{ '/assets/FraminghamPACE_full_biomarker_spaghetti.png' | relative_url }}"
-            alt="FraminghamPACE biomarker trajectories">
+            alt="FraminghamPACE biomarker trajectories" class="wrap-image">
+          <p>
+            Aging unfolds across organ systems, leaving its mark in your bloodwork over time. Plotting nearly 40 years of longitudinal biomarker data from the Framingham Heart Study (right) you see an immense amount of variability, but each individual carries a coherent signal across biomarkers.
+          </p>
+          <p>
+            To distill these data into a single latent aging phenotype, I designed a hierarchical mixed effects model producing robust, per-person estimates of the pace of aging. By training a model to predict pace of aging from epigenomic data, an individual's score can be measured from a single blood draw.
+          </p>
+          <p>
+            The resulting epigenetic clock, FraminghamPACE, is now patented with me as co-lead inventor, licensed to TruDiagnostic, and the subject of a first-author manuscript in preparation.
+          </p>
+          <div class="project-links">
+            <a href="{{ '/assets/FraminghamPACE_Poster.pdf' | relative_url }}" target="_blank">→ Poster</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card stacked-layout">
         <div class="project-header">
           <h3>QueryGaP</h3>
           <div class="project-tags">
@@ -98,17 +100,16 @@ title: Will Marella
           </div>
         </div>
         <div class="project-content">
-          <div class="project-text">
-            <p>
-              An AI-powered search tool for the NIH dbGaP database of genomics studies. Translates natural language queries
-              into structured searches, making it easier to find relevant datasets for research. Built with rate limiting
-              for public deployment.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank">→ Site</a>
-            </div>
+          <p>
+            dbGaP is one of the largest repositories of genotype-phenotype data in the world. The online site serves data documentation for 3,000 studies, including many that I work with daily. Tired of manually surfing their documentation online, I built QueryGaP.
+          </p>
+          <p>
+            To build it, I scraped the full dbGaP catalog (3,000 studies, 450,000 variables) into a PostgreSQL database with hybrid search (tsvector for keyword matching, pgvector for semantic similarity), then built a ReAct-style AI agent that queries the database and returns relevant results conversationally from a natural language prompt. Deployed publicly.
+          </p>
+          <div class="project-links">
+            <a href="#" target="_blank">→ Site</a>
           </div>
-          <video src="{{ '/assets/QueryGaPThinks.mp4' | relative_url }}" autoplay loop muted playsinline class="wide-video"></video>
+          <video src="{{ '/assets/QueryGaPThinks.mp4' | relative_url }}" autoplay loop muted playsinline class="wide-video stacked-media"></video>
         </div>
       </div>
 

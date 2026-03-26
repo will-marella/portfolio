@@ -23,7 +23,7 @@
   --accent-light: #d66840;
   --accent-subtle: rgba(180, 83, 48, 0.08);
 
-  --max-width: 760px;
+  --max-width: 880px;
 }
 
 body {
@@ -255,13 +255,42 @@ h2 {
   align-items: start;
 }
 
+/* Text wrapping layout for specific projects */
+.project-card.text-wrap .project-content {
+  display: block;
+}
+
+.project-card.text-wrap .project-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.project-card.text-wrap .wrap-image {
+  float: right;
+  margin: 0 0 1.5rem 2rem;
+}
+
+/* Stacked layout: text above, media below */
+.project-card.stacked-layout .project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-card.stacked-layout .stacked-media {
+  width: 100%;
+  max-width: 650px;
+  align-self: flex-start;
+}
+
 .project-text {
   max-width: 600px;
 }
 
 .project-content img,
 .project-content video {
-  width: 220px;
+  width: 280px;
   border-radius: 4px;
   /* Minimal rounded corner, almost sharp */
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -277,7 +306,7 @@ h2 {
 
 /* Special styling for wide aspect ratio videos (like QueryGaP) */
 .project-content video.wide-video {
-  width: 340px;
+  width: 420px;
   /* Wider to accommodate 4:1 aspect ratio text output */
 }
 
@@ -296,6 +325,13 @@ h2 {
   .project-content video.wide-video {
     max-width: 100%;
     /* Allow full width on mobile for better readability */
+  }
+
+  .project-card.text-wrap .wrap-image {
+    float: none;
+    margin: 0 0 1.5rem 0;
+    width: 100%;
+    max-width: 400px;
   }
 }
 
@@ -329,7 +365,12 @@ h2 {
 .project-card p {
   font-size: 1.05rem;
   color: var(--text-light);
-  line-height: 1.8;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.project-card p:last-of-type {
+  margin-bottom: 0;
 }
 
 .project-links {
