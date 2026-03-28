@@ -106,55 +106,10 @@ title: Will Marella
           <p>
             To build it, I scraped the full dbGaP catalog (3,000 studies, 450,000 variables) into a PostgreSQL database with hybrid search (tsvector for keyword matching, pgvector for semantic similarity), then built a ReAct-style AI agent that queries the database and returns relevant results conversationally from a natural language prompt. Deployed publicly.
           </p>
-          <div class="project-links">
-            <a href="#" target="_blank">→ Site</a>
-          </div>
           <video src="{{ '/assets/QueryGaPThinks.mp4' | relative_url }}" autoplay loop muted playsinline class="wide-video stacked-media"></video>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <h3>ascii-dream</h3>
-          <div class="project-tags">
-            <span class="tag">CLI Tool</span>
-            <span class="tag">Fun</span>
+          <div class="project-links">
+            <a href="https://querygap.org/" target="_blank">→ Site</a>
           </div>
-        </div>
-        <div class="project-content">
-          <div class="project-text">
-            <p>
-              A command-line tool that generates ASCII art from text prompts using Stable Diffusion. Built with Python
-              and Modal for serverless GPU inference.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/will-marella/ascii-dream" target="_blank">→ GitHub</a>
-            </div>
-          </div>
-          <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="ascii-dream demo">
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <h3>OpenCode Protect</h3>
-          <div class="project-tags">
-            <span class="tag">Security</span>
-            <span class="tag">Open Source</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-text">
-            <p>
-              OS-level sandboxing for OpenCode, an open-source AI coding assistant. Isolates agent execution using a
-              restricted Unix user and filesystem permissions to prevent unintended side effects during agentic coding
-              sessions.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/will-marella/opencode-protect" target="_blank">→ GitHub</a>
-            </div>
-          </div>
-          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}" alt="OpenCode Protect demo">
         </div>
       </div>
 
@@ -169,15 +124,71 @@ title: Will Marella
         <div class="project-content">
           <div class="project-text">
             <p>
-              A Bayesian latent factor model for multi-omic data integration. Uses mean-field variational inference and
-              partially collapsed Gibbs sampling to discover shared structure across high-dimensional biological
-              datasets.
+              For my MPhil dissertation at Cambridge, I worked on Latent Factor Allocation (LFA), a probabilistic topic model designed to discover genetic variants that underpin propensity to multiple disease types.
+            </p>
+            <p>
+              Exact inference methods exist (e.g. MCMC), but they don't scale. I derived a mean-field variational inference algorithm that makes the model tractable on datasets the size of the UK Biobank. I implemented this algorithm and a partially collapsed Gibbs sampler from scratch in NumPy and SciPy to compare these methods.
+            </p>
+            <p>
+              I've continued on this project as a part-time Visiting Researcher at Cambridge.
             </p>
             <div class="project-links">
+              <a href="{{ '/assets/MPhil_Dissertation.pdf' | relative_url }}" target="_blank">→ Dissertation</a>
               <a href="#" target="_blank">→ GitHub</a>
             </div>
           </div>
           <img src="{{ '/assets/LFA-DGM.jpg' | relative_url }}" alt="LFA-DGM model diagram">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>OpenCode Protect</h3>
+          <div class="project-tags">
+            <span class="tag">Security</span>
+            <span class="tag">Open Source</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-text">
+            <p>
+              AI coding agents have full filesystem access by default. Existing protections are largely at the prompt-level, easily bypassed by injection attacks.
+            </p>
+            <p>
+              Often working with sensitive data, I also want to ensure that I can use AI coding agents without risking agents reading sensitive files.
+            </p>
+            <p>
+              OpenCode Protect solves these problems at the OS level. Commands run as a restricted Unix user without permission to access protected files, providing kernel-level security for sensitive files.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean" target="_blank">→ GitHub</a>
+            </div>
+          </div>
+          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}" alt="OpenCode Protect demo">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>ascii-dream</h3>
+          <div class="project-tags">
+            <span class="tag">CLI Tool</span>
+            <span class="tag">Fun</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-text">
+            <p>
+              CLI tool that generates dream-like ASCII art via Stable Diffusion, with GPU inference handled on-demand through Modal.
+            </p>
+            <p>
+              Included for the pretty visual, not technical depth.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/will-marella/ascii-dream" target="_blank">→ GitHub</a>
+            </div>
+          </div>
+          <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="ascii-dream demo">
         </div>
       </div>
 
