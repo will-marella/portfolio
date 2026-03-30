@@ -186,9 +186,34 @@ title: Will Marella
             </p>
             <div class="project-links">
               <a href="https://github.com/will-marella/ascii-dream" target="_blank">→ GitHub</a>
+              <a href="{{ '/ascii-dream' | relative_url }}">→ See more</a>
             </div>
           </div>
           <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="ascii-dream demo">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>CostcoGuessr</h3>
+          <div class="project-tags">
+            <span class="tag">Web App</span>
+            <span class="tag">Fun</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-text">
+            <p>
+              Daily Costco price guessing game with 10,000+ real Costco products across eleven countries.
+            </p>
+            <p>
+              Product data scraped (compliant with terms of service!), cleaned, and stored into a PostgreSQL database which services a Bun/Hono backend hosted on Railway and Next.js frontend hosted on Vercel. User analytics tracked via a lightweight PostgreSQL database and with PostHog.
+            </p>
+            <p>
+              Reached 200+ daily users at peak.
+            </p>
+          </div>
+          <video src="{{ '/assets/CG Draft1.mp4' | relative_url }}" autoplay loop muted playsinline onloadedmetadata="this.playbackRate = 0.75;"></video>
         </div>
       </div>
 
