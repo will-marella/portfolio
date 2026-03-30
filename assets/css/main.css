@@ -73,7 +73,7 @@ section {
 /* ── Header / Bio ── */
 .header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 3rem;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -81,9 +81,9 @@ section {
 }
 
 .profile-pic {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  width: 154px;
+  height: 206px;
+  border-radius: 0;
   object-fit: cover;
   flex-shrink: 0;
   transition: all 0.6s ease;
