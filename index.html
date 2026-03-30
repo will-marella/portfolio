@@ -72,23 +72,24 @@ title: Will Marella
             Aging unfolds across organ systems, leaving its mark in your bloodwork over time. Plotting nearly 40 years of longitudinal biomarker data from the Framingham Heart Study (right) you see an immense amount of variability, but each individual carries a coherent signal across biomarkers.
           </p>
           <p>
-            To distill these data into a single latent aging phenotype, I designed a hierarchical mixed effects model producing robust, per-person estimates of the pace of aging. By training a model to predict pace of aging from epigenomic data, an individual's score can be measured from a single blood draw.
+            I designed and implemented the modeling pipeline end to end. First, I formulated a hierarchical mixed effects model to distill these data into a single latent aging phenotype, producing robust, per-person estimates of pace of aging. Then I trained an epigenomic predictor that enables measurement from a single blood draw.
           </p>
           <p>
-            The resulting epigenetic clock, FraminghamPACE, is now patented with me as co-lead inventor, licensed to TruDiagnostic, and the subject of a first-author manuscript in preparation.
+            The resulting epigenetic clock, FraminghamPACE, is now patented and licensed with me as co-lead inventor, and is the subject of a first-author manuscript in preparation.
           </p>
           <div class="project-links">
-            <a href="{{ '/assets/FraminghamPACE_Poster.pdf' | relative_url }}" target="_blank">→ Poster</a>
+            <a href="{{ '/assets/FraminghamPACE_Poster.pdf' | relative_url }}" target="_blank"><strong><em>→ Poster</em></strong></a>
           </div>
         </div>
       </div>
 
+      
       <div class="project-card stacked-layout">
         <div class="project-header">
           <h3>QueryGaP</h3>
           <div class="project-tags">
-            <span class="tag accent">AI Tool</span>
-            <span class="tag">Web App</span>
+            <span class="tag accent">AI Agent</span>
+            <span class="tag">Deployed</span>
           </div>
         </div>
         <div class="project-content">
@@ -100,14 +101,15 @@ title: Will Marella
           </p>
           <video src="{{ '/assets/QueryGaPThinks.mp4' | relative_url }}" autoplay loop muted playsinline class="wide-video stacked-media"></video>
           <div class="project-links">
-            <a href="https://querygap.org/" target="_blank">→ Site</a>
+            <a href="https://querygap.org/" target="_blank"><strong><em>→ Site</em></strong></a>
           </div>
         </div>
       </div>
 
+      
       <div class="project-card">
         <div class="project-header">
-          <h3>Latent Factor Allocation</h3>
+          <h3>Latent Factor Allocation (LFA)</h3>
           <div class="project-tags">
             <span class="tag accent">Research</span>
             <span class="tag">Bayesian</span>
@@ -116,7 +118,7 @@ title: Will Marella
         <div class="project-content">
           <div class="project-text">
             <p>
-              For my MPhil dissertation at Cambridge, I worked on Latent Factor Allocation (LFA), a probabilistic topic model designed to discover genetic variants that underpin propensity to multiple disease types.
+              For my MPhil dissertation at Cambridge, I worked on Latent Factor Allocation (LFA), a probabilistic topic model designed to discover genetic variants that drive risk across multiple diseases.
             </p>
             <p>
               Exact inference methods exist (e.g. MCMC), but they don't scale. I derived a mean-field variational inference algorithm that makes the model tractable on datasets the size of the UK Biobank. I implemented this algorithm and a partially collapsed Gibbs sampler from scratch in NumPy and SciPy to compare these methods.
@@ -125,14 +127,15 @@ title: Will Marella
               I've continued on this project as a part-time Visiting Researcher at Cambridge.
             </p>
             <div class="project-links">
-              <a href="{{ '/assets/MPhil_Dissertation.pdf' | relative_url }}" target="_blank">→ Dissertation</a>
-              <a href="#" target="_blank">→ GitHub</a>
+              <a href="{{ '/assets/MPhil_Dissertation.pdf' | relative_url }}" target="_blank"><strong><em>→ Dissertation</em></strong></a>
+              <a href="#" target="_blank"><strong><em>→ GitHub</em></strong></a>
             </div>
           </div>
           <img src="{{ '/assets/LFA-DGM.jpg' | relative_url }}" alt="LFA-DGM model diagram">
         </div>
       </div>
 
+      
       <div class="project-card">
         <div class="project-header">
           <h3>OpenCode Protect</h3>
@@ -144,7 +147,7 @@ title: Will Marella
         <div class="project-content">
           <div class="project-text">
             <p>
-              AI coding agents have full filesystem access by default. Existing protections are largely at the prompt-level, easily bypassed by injection attacks.
+              AI coding agents often run with full filesystem access. Existing protections are largely at the prompt-level, easily bypassed by injection attacks.
             </p>
             <p>
               Often working with sensitive data, I also want to ensure that I can use AI coding agents without risking agents reading sensitive files.
@@ -153,13 +156,14 @@ title: Will Marella
               OpenCode Protect solves these problems at the OS level. Commands run as a restricted Unix user without permission to access protected files, providing kernel-level security for sensitive files.
             </p>
             <div class="project-links">
-              <a href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean" target="_blank">→ GitHub</a>
+              <a href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean" target="_blank"><strong><em>→ GitHub</em></strong></a>
             </div>
           </div>
           <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}" alt="OpenCode Protect demo">
         </div>
       </div>
 
+      
       <div class="project-card">
         <div class="project-header">
           <h3>ascii-dream</h3>
@@ -171,26 +175,24 @@ title: Will Marella
         <div class="project-content">
           <div class="project-text">
             <p>
-              CLI tool that generates dream-like ASCII art via Stable Diffusion, with GPU inference handled on-demand through Modal.
-            </p>
-            <p>
-              Included for the pretty visual, not technical depth.
+              Command-line tool that generates dream-like ASCII art via LTX-Video, with GPU inference handled on-demand through Modal.
             </p>
             <div class="project-links">
-              <a href="https://github.com/will-marella/ascii-dream" target="_blank">→ GitHub</a>
-              <a href="{{ '/ascii-dream' | relative_url }}">→ See more</a>
+              <a href="https://github.com/will-marella/ascii-dream" target="_blank"><strong><em>→ GitHub</em></strong></a>
+              <a href="{{ '/ascii-dream' | relative_url }}"><strong><em>→ See more</em></strong></a>
             </div>
           </div>
           <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="ascii-dream demo">
         </div>
       </div>
 
+      
       <div class="project-card">
         <div class="project-header">
           <h3>CostcoGuessr</h3>
           <div class="project-tags">
             <span class="tag">Web App</span>
-            <span class="tag">Fun</span>
+            <span class="tag">Deployed</span>
           </div>
         </div>
         <div class="project-content">
@@ -202,8 +204,11 @@ title: Will Marella
               Product data scraped (compliant with terms of service!), cleaned, and stored into a PostgreSQL database which services a Bun/Hono backend hosted on Railway and Next.js frontend hosted on Vercel. User analytics tracked via a lightweight PostgreSQL database and with PostHog.
             </p>
             <p>
-              Reached 200+ daily users at peak.
+              Reached 200+ daily users.
             </p>
+            <div class="project-links">
+              <a href="https://costcoguessr.com/play" target="_blank"><strong><em>→ Site</em></strong></a>
+            </div>
           </div>
           <video src="{{ '/assets/CG Draft1.mp4' | relative_url }}" autoplay loop muted playsinline onloadedmetadata="this.playbackRate = 0.75;"></video>
         </div>

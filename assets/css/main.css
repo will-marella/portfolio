@@ -226,6 +226,12 @@ h2 {
   padding-bottom: 0;
 }
 
+.project-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
 .project-header {
   display: flex;
   align-items: baseline;
