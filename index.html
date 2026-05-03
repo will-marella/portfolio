@@ -138,6 +138,34 @@ title: Will Marella
       
       <div class="project-card">
         <div class="project-header">
+          <h3>ascii-doodle</h3>
+          <div class="project-tags">
+            <span class="tag">Generative AI</span>
+            <span class="tag">From Scratch</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-text">
+            <p>
+              Text-to-ASCII art via a 300M parameter diffusion model I trained from scratch on Modal A100s.
+            </p>
+            <p>
+              A CLIP-conditioned Diffusion Transformer (DiT) trained with flow matching generates over a VAE-compressed latent space of 32x16 ASCII token grids. Trained on Google Quick, Draw!. At inference time, classifier-free guidance lets you dial prompt fidelity vs. diversity.
+            </p>
+            <p>
+              The CLIP conditioning gives the model semantic flexibility: it generalizes across synonyms and paraphrases it never saw as training labels, and occasionally produces plausible blends on near-out-of-distribution prompts.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/will-marella/ascii-doodle" target="_blank"><strong><em>→ GitHub</em></strong></a>
+            </div>
+          </div>
+          <img src="{{ '/assets/ascii-doodle-process.gif' | relative_url }}" alt="ascii-doodle generation process">
+        </div>
+      </div>
+
+      
+      <div class="project-card">
+        <div class="project-header">
           <h3>OpenCode Protect</h3>
           <div class="project-tags">
             <span class="tag">Security</span>
