@@ -394,6 +394,7 @@ h2 {
 
 .project-links {
   display: flex;
+  justify-content: flex-start;
   gap: 1.5rem;
   margin-top: 1.5rem;
   font-size: 0.95rem;

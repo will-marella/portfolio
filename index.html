@@ -117,10 +117,10 @@ title: Will Marella
         <div class="project-content">
           <div class="project-text">
             <p>
-              A small benchmark testing whether frontier LLM agents are too cooperative or too strategically limited to reach Nash equilibria in repeated games.
+              Existing literature suggests that LLM agents often fail in game-theoretic environments, with those failures commonly explained as either a limitation in strategic reasoning or a bias toward cooperative, prosocial behavior. I found that surprising, so I built my own benchmark to investigate it directly.
             </p>
             <p>
-              Across Prisoner's Dilemma, asymmetric Cournot competition, and a Braess-style congestion game, the main result is that agents can defect, compete, and converge, but complex multi-agent environments are sharply gated by inference-time reasoning.
+              I evaluated agents on canonical and non-canonical multi-agent games designed to test whether models are willing to diverge from prosocial behavior in simple environments and whether they can succeed in highly complex strategic settings. The results show that frontier LLM agents are capable of competitive, equilibrium-seeking behavior, but that success depends sharply on inference-time reasoning.
             </p>
             <div class="project-links">
               <a href="{{ '/llm-agents-nash' | relative_url }}"><strong><em>Read post</em></strong></a>
