@@ -66,10 +66,8 @@ title: Will Marella
           </div>
         </div>
         <div class="project-content">
-          <object data="{{ '/assets/full_biomarker_spaghetti.pdf' | relative_url }}" type="application/pdf"
-            class="wrap-image" aria-label="FraminghamPACE biomarker trajectories">
-            <a href="{{ '/assets/full_biomarker_spaghetti.pdf' | relative_url }}" target="_blank">View biomarker trajectories</a>
-          </object>
+          <img src="{{ '/assets/full_biomarker_spaghetti.jpg' | relative_url }}"
+            alt="FraminghamPACE biomarker trajectories" class="wrap-image" loading="lazy" decoding="async">
           <p>
             Aging unfolds across organ systems, leaving its mark in your bloodwork over time. Plotting nearly 40 years of longitudinal biomarker data from the Framingham Heart Study (right) you see an immense amount of variability, but each individual carries a coherent signal across biomarkers.
           </p>
@@ -101,7 +99,7 @@ title: Will Marella
           <p>
             To build it, I scraped the full dbGaP catalog (3,000 studies, 450,000 variables) into a PostgreSQL database with hybrid search (tsvector for keyword matching, pgvector for semantic similarity), then built a ReAct-style AI agent that queries the database and returns relevant results conversationally from a natural language prompt. Deployed publicly.
           </p>
-          <video src="{{ '/assets/QueryGaPThinks.mp4' | relative_url }}" autoplay loop muted playsinline class="wide-video stacked-media"></video>
+          <video src="{{ '/assets/QueryGaPThinks.mp4' | relative_url }}" autoplay loop muted playsinline preload="metadata" class="wide-video stacked-media"></video>
           <div class="project-links">
             <a href="https://querygap.org/" target="_blank"><strong><em>→ Site</em></strong></a>
           </div>
@@ -117,7 +115,7 @@ title: Will Marella
           </div>
         </div>
         <div class="project-content">
-          <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark" class="wrap-image">
+          <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark" class="wrap-image" loading="lazy" decoding="async">
           <p>
             Existing literature suggests that LLM agents often fail in game-theoretic environments, with those failures commonly explained as either a limitation in strategic reasoning or a bias toward cooperative, prosocial behavior. I found that surprising, so I built my own benchmark to investigate it directly.
           </p>
@@ -155,7 +153,7 @@ title: Will Marella
               <a href="https://github.com/will-marella/LFA" target="_blank"><strong><em>→ GitHub</em></strong></a>
             </div>
           </div>
-          <img src="{{ '/assets/LFA-DGM.jpg' | relative_url }}" alt="LFA-DGM model diagram">
+          <img src="{{ '/assets/LFA-DGM.jpg' | relative_url }}" alt="LFA-DGM model diagram" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -183,7 +181,7 @@ title: Will Marella
               <a href="https://github.com/will-marella/ascii-doodle" target="_blank"><strong><em>→ GitHub</em></strong></a>
             </div>
           </div>
-          <img src="{{ '/assets/ascii-doodle-process.gif' | relative_url }}" alt="ascii-doodle generation process">
+          <img src="{{ '/assets/ascii-doodle-process.gif' | relative_url }}" alt="ascii-doodle generation process" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -211,7 +209,7 @@ title: Will Marella
               <a href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean" target="_blank"><strong><em>→ GitHub</em></strong></a>
             </div>
           </div>
-          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}" alt="OpenCode Protect demo">
+          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}" alt="OpenCode Protect demo" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -234,7 +232,7 @@ title: Will Marella
               <a href="{{ '/ascii-dream' | relative_url }}"><strong><em>→ See more</em></strong></a>
             </div>
           </div>
-          <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="ascii-dream demo">
+          <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="ascii-dream demo" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -262,7 +260,7 @@ title: Will Marella
               <a href="https://costcoguessr.com/play" target="_blank"><strong><em>→ Site</em></strong></a>
             </div>
           </div>
-          <video src="{{ '/assets/CG Draft1.mp4' | relative_url }}" autoplay loop muted playsinline onloadedmetadata="this.playbackRate = 0.75;"></video>
+          <video src="{{ '/assets/CG Draft1.mp4' | relative_url }}" autoplay loop muted playsinline preload="metadata" onloadedmetadata="this.playbackRate = 0.75;"></video>
         </div>
       </div>
 

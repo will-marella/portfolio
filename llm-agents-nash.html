@@ -57,7 +57,7 @@ description: A small benchmark of frontier LLM agents in repeated game-theoretic
         Each model/reasoning/game cell is evaluated across 10 independent trials. The simulations log actions, payoffs or costs, final allocations, distance from equilibrium where relevant, decision rationales or reasoning traces when available, latency, and inference cost.
       </p>
       <figure>
-        <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark">
+        <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark" loading="lazy" decoding="async">
         <figcaption>Figure 1. Experimental schematic.</figcaption>
       </figure>
     </section>
@@ -107,7 +107,7 @@ description: A small benchmark of frontier LLM agents in repeated game-theoretic
         This result rules out the simplest version of the cooperative-bias story. At least in this setup, the strongest model has no difficulty selecting the non-cooperative Nash action.
       </p>
       <figure>
-        <img src="{{ '/assets/llm-agents-nash/prisoners-dilemma-button-b-rate.png' | relative_url }}" alt="Prisoner's Dilemma Button B choice rate by model, reasoning setting, and round">
+        <img src="{{ '/assets/llm-agents-nash/prisoners-dilemma-button-b-rate.png' | relative_url }}" alt="Prisoner's Dilemma Button B choice rate by model, reasoning setting, and round" loading="lazy" decoding="async">
         <figcaption>Figure 2. Prisoner's Dilemma Button B choice rate.</figcaption>
       </figure>
     </section>
@@ -153,7 +153,7 @@ description: A small benchmark of frontier LLM agents in repeated game-theoretic
         However, if even the smallest model can compute and play the Cournot equilibrium from round one, then Cournot is not sufficiently challenging or interesting for frontier models.
       </p>
       <figure>
-        <img src="{{ '/assets/llm-agents-nash/cournot-distance-from-nash.png' | relative_url }}" alt="Asymmetric Cournot final-round distance from the Nash quantity vector">
+        <img src="{{ '/assets/llm-agents-nash/cournot-distance-from-nash.png' | relative_url }}" alt="Asymmetric Cournot final-round distance from the Nash quantity vector" loading="lazy" decoding="async">
         <figcaption>Figure 3. Asymmetric Cournot distance from Nash quantity.</figcaption>
       </figure>
     </section>
@@ -202,11 +202,11 @@ description: A small benchmark of frontier LLM agents in repeated game-theoretic
         Successful performance for all three model types was strongly gated on reasoning effort. All three models achieved modest success with high reasoning effort, and none of the models achieved success without reasoning effort. Model size was less strongly correlated with success, with little difference in performance between gpt-5.4-nano and gpt-5.4-mini, although gpt-5.4 clearly performed the strongest.
       </p>
       <figure>
-        <img src="{{ '/assets/llm-agents-nash/braess-stable-nash-by-round.png' | relative_url }}" alt="Braess stable Nash rate by round">
+        <img src="{{ '/assets/llm-agents-nash/braess-stable-nash-by-round.png' | relative_url }}" alt="Braess stable Nash rate by round" loading="lazy" decoding="async">
         <figcaption>Figure 4. Braess stable Nash rate by round.</figcaption>
       </figure>
       <figure>
-        <img src="{{ '/assets/llm-agents-nash/braess-final-stable-nash-rate.png' | relative_url }}" alt="Braess final stable Nash rate by reasoning level">
+        <img src="{{ '/assets/llm-agents-nash/braess-final-stable-nash-rate.png' | relative_url }}" alt="Braess final stable Nash rate by reasoning level" loading="lazy" decoding="async">
         <figcaption>Figure 5. Braess final stable Nash rate by reasoning level.</figcaption>
       </figure>
     </section>
