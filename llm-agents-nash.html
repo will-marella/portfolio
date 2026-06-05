@@ -1,0 +1,259 @@
+---
+layout: default
+title: LLM Agents Are Not Too Nice or Too Dumb to Play Nash
+description: A small benchmark of frontier LLM agents in repeated game-theoretic environments.
+---
+
+<main class="article-main">
+  <article class="blog-post">
+    <nav class="article-nav">
+      <a href="{{ '/' | relative_url }}">← Projects</a>
+    </nav>
+
+    <header class="article-header">
+      <p class="article-kicker">AI agents · Game theory</p>
+      <h1>LLM Agents Are Not Too Nice or Too Dumb to Play Nash</h1>
+      <p class="article-dek">
+        Existing evidence that LLMs are incapable of acting rationally in game-theoretic environments is outdated, or incorrect. In repeated games, frontier models defect, compete, and converge, but only with sufficient reasoning tokens.
+      </p>
+    </header>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Much of the existing literature on LLMs in game-theoretic settings points to a striking pattern: when LLMs are placed into canonical strategic games, they often fail to act rationally. Instead of cleanly converging to Nash equilibria, they frequently cooperate, forgive, or choose socially desirable actions even when those choices are not payoff-maximizing.
+      </p>
+      <p>
+        One explanation is that LLM agents have a cooperative bias internalized into their weights: a learned tendency toward fair, prosocial, or non-exploitative behavior, even when that behavior is not payoff-maximizing. This is plausible given models are generally optimized in post-training to be helpful, harmless, and agreeable.
+      </p>
+      <p>
+        A second explanation is that LLM agents are incapable of performing the strategic reasoning necessary to reason carefully through game-theoretic environments. Models may misread payoff structures, form poor expectations about other agents, or collapse onto familiar but inappropriate heuristics.
+      </p>
+      <p>
+        However, I believe frontier LLMs and LLM agents to be highly capable, and I found these results implausible. I designed my own experiment to investigate frontier LLM agents' ability to exhibit strategic behavior in game-theoretic environments.
+      </p>
+      <p>
+        To do so, I challenged LLM agents to play Nash-style games. In Nash-style games, the individually rational action is frequently not the socially optimal action. Additionally, acting rationally in these games frequently leads to a Nash equilibrium: a stable outcome in which none of the actors are incentivized to change their behavior. Converging upon this equilibrium reflects rational, strategic behavior.
+      </p>
+      <p>
+        I designed a small suite of repeated game-theoretic environments to investigate whether LLM agents are too nice, or too dumb, to play Nash. The benchmark includes three games with varying levels of complexity and varying levels of incentives for acting prosocially, to investigate both explanations. Across these environments, I varied both model scale and reasoning budget for a detailed picture of model performance.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Questions</h2>
+      <ul>
+        <li>Are frontier LLM agents systematically biased away from selfish Nash behavior when that behavior is payoff-maximizing?</li>
+        <li>Does equilibrium behavior degrade as games become less canonical, more multi-agent, and more computationally demanding?</li>
+        <li>How do model size and inference-time reasoning affect convergence to Nash, especially in harder environments?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experimental Setup</h2>
+      <p>
+        I implemented each game as a repeated multi-agent environment. Within a run, every player is controlled by the same model and reasoning setting. On each round, agents receive the game rules, their player identity, recent history, and a structured decision prompt. After all agents act, the environment computes payoffs or costs and advances to the next round.
+      </p>
+      <p>
+        The benchmark compares three models from the same frontier model family: gpt-5.4, gpt-5.4-mini, and gpt-5.4-nano. For each model, I vary inference-time reasoning across four settings: none, low, medium, and high. The main experimental contrast is therefore not only model scale, but the interaction between model capacity and reasoning budget.
+      </p>
+      <p>
+        Each model/reasoning/game cell is evaluated across 10 independent trials. The simulations log actions, payoffs or costs, final allocations, distance from equilibrium where relevant, decision rationales or reasoning traces when available, latency, and inference cost.
+      </p>
+      <figure>
+        <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark">
+        <figcaption>Figure 1. Experimental schematic.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Game 1: Prisoner's Dilemma</h2>
+      <p>
+        Prisoner's Dilemma is the canonical test of niceness versus self-interested rationality. Two players simultaneously choose Button A or Button B. Mutual cooperation is socially efficient, but defection is individually dominant.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Other chooses A</th>
+              <th>Other chooses B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Choose A</th>
+              <td>3, 3</td>
+              <td>0, 5</td>
+            </tr>
+            <tr>
+              <th>Choose B</th>
+              <td>5, 0</td>
+              <td>1, 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Button B strictly dominates Button A. If the other player chooses A, Button B yields 5 rather than 3. If the other player chooses B, Button B yields 1 rather than 0. Therefore, the unique stage-game Nash equilibrium is (B, B). In a finite repeated version of the game, this stage-game logic provides the natural self-interested benchmark: absent additional commitments or external incentives, the payoff-maximizing action remains Button B in each round.
+      </p>
+      <p>
+        The socially optimal outcome is (A, A), with total payoff 6 rather than total payoff 2 at the Nash equilibrium. Equivalently, the Nash outcome achieves only one-third of the maximum social welfare, giving a welfare price of anarchy of 6 / 2 = 3. The game therefore cleanly separates self-interested rationality from social welfare.
+      </p>
+      <p>
+        <strong>Evaluation metric.</strong> Agents were assessed on their Button B choice rate across rounds.
+      </p>
+      <h3>Results</h3>
+      <p>
+        Figure 2 shows the Button B choice rate by model, reasoning setting, and round. The strongest model, gpt-5.4, chooses Button B in 100% of analyzed decisions across all reasoning settings. The smaller models show the same qualitative pattern, but required more reasoning to reliably select Button B.
+      </p>
+      <p>
+        This result rules out the simplest version of the cooperative-bias story. At least in this setup, the strongest model has no difficulty selecting the non-cooperative Nash action.
+      </p>
+      <figure>
+        <img src="{{ '/assets/llm-agents-nash/prisoners-dilemma-button-b-rate.png' | relative_url }}" alt="Prisoner's Dilemma Button B choice rate by model, reasoning setting, and round">
+        <figcaption>Figure 2. Prisoner's Dilemma Button B choice rate.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Game 2: Asymmetric Cournot Competition</h2>
+      <p>
+        Prisoner's Dilemma is a useful first test, but it is also highly canonical. A model might choose Button B because it recognizes the familiar "defect is dominant" structure rather than because it can reason through a less familiar strategic environment. Asymmetric Cournot competition provides a harder test. The equilibrium depends on solving a system of best responses.
+      </p>
+      <p>
+        There are three firms. Each firm <em>i</em> chooses a quantity <em>q<sub>i</sub></em> in [0, 100]. Total output is <em>Q = q<sub>1</sub> + q<sub>2</sub> + q<sub>3</sub></em>. Market price is <em>P(Q) = 60 - Q</em>. The firms have asymmetric marginal costs <em>c = (10, 15, 20)</em>. Firm <em>i</em>'s profit is:
+      </p>
+      <p class="equation">π<sub>i</sub>(q<sub>i</sub>, q<sub>-i</sub>) = q<sub>i</sub>(100 - Q - c<sub>i</sub>)</p>
+      <p>
+        For an interior optimum, firm <em>i</em>'s first-order condition is:
+      </p>
+      <p class="equation">∂π<sub>i</sub> / ∂q<sub>i</sub> = 100 - c<sub>i</sub> - Q<sub>-i</sub> - 2q<sub>i</sub> = 0</p>
+      <p>
+        where <em>Q<sub>-i</sub></em> is the total output of the other firms. The best response is:
+      </p>
+      <p class="equation">q<sub>i</sub> = (100 - c<sub>i</sub> - Q<sub>-i</sub>) / 2</p>
+      <p>
+        Solving the three first-order conditions gives the Nash quantity vector:
+      </p>
+      <p class="equation">(q<sub>1</sub>*, q<sub>2</sub>*, q<sub>3</sub>*) = (26.25, 21.25, 16.25)</p>
+      <p>
+        This equilibrium is selfish and competitive, but it is not a simple binary action or a memorized Prisoner's Dilemma response.
+      </p>
+      <p>
+        For an efficiency comparison, the welfare-maximizing allocation would place production with the lowest-cost firm until price equals its marginal cost. That gives <em>Q = 90</em>, <em>P = 10</em>, and total welfare of 4050. At the Cournot equilibrium, total welfare is approximately 3436.7, giving a welfare price of anarchy of 4050 / 3436.7 ≈ 1.18.
+      </p>
+      <p>
+        The Cournot game therefore extends the Prisoner's Dilemma result in two ways. First, the Nash equilibrium remains selfish and inefficient relative to the social optimum. Second, reaching it requires more than selecting a familiar dominant action; the agent must compute a continuous best response in a competitive environment.
+      </p>
+      <p>
+        <strong>Evaluation metric.</strong> I measure distance from the Nash quantity vector over rounds and in the final analyzed round. This captures whether the agents converge toward the equilibrium quantities (26.25, 21.25, 16.25), rather than merely choosing qualitatively competitive actions.
+      </p>
+      <h3>Results</h3>
+      <p>
+        Figure 3 shows final-round distance from the Nash quantity vector. Without reasoning, performance is imperfect, and model size tracks success: larger models land closer to the equilibrium, while smaller models deviate more. With sufficient reasoning, however, all models are able to compute the equilibrium directly. Even gpt-5.4-nano identifies the Nash vector and plays it from the first round.
+      </p>
+      <p>
+        However, if even the smallest model can compute and play the Cournot equilibrium from round one, then Cournot is not sufficiently challenging or interesting for frontier models.
+      </p>
+      <figure>
+        <img src="{{ '/assets/llm-agents-nash/cournot-distance-from-nash.png' | relative_url }}" alt="Asymmetric Cournot final-round distance from the Nash quantity vector">
+        <figcaption>Figure 3. Asymmetric Cournot distance from Nash quantity.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Game 3: Braess-Style Congestion Game</h2>
+      <p>
+        The Braess-style congestion game is the hardest environment in the benchmark. Unlike Prisoner's Dilemma, there is no dominant action. Unlike Cournot, the equilibrium is not a fixed quantity vector that each player can compute independently from a small system of first-order conditions. Instead, each agent's best response depends on how the other agents distribute themselves across routes.
+      </p>
+      <p>
+        Six agents choose among three routes, A, B, and C. Route costs depend on the number of agents using shared congestible edges. Let <em>x<sub>A</sub></em>, <em>x<sub>B</sub></em>, and <em>x<sub>C</sub></em> denote route counts, with <em>x<sub>A</sub> + x<sub>B</sub> + x<sub>C</sub> = 6</em>.
+      </p>
+      <p>The route costs are:</p>
+      <p class="equation">C<sub>A</sub> = 5(x<sub>A</sub> + x<sub>C</sub>) + 28</p>
+      <p class="equation">C<sub>B</sub> = 28 + 5(x<sub>B</sub> + x<sub>C</sub>)</p>
+      <p class="equation">C<sub>C</sub> = 5(x<sub>A</sub> + x<sub>C</sub>) + 5(x<sub>B</sub> + x<sub>C</sub>)</p>
+      <p>
+        Route C uses both congestible edges, so it can be attractive when few agents use it but costly when many agents pile onto it.
+      </p>
+      <p>
+        The socially optimal allocation is <em>(x<sub>A</sub>, x<sub>B</sub>, x<sub>C</sub>) = (3, 3, 0)</em>. At this allocation, <em>C<sub>A</sub> = 43</em> and <em>C<sub>B</sub> = 43</em>, so total cost is <em>3 × 43 + 3 × 43 = 258</em> and average cost is 43.
+      </p>
+      <p>
+        However, this allocation is not a Nash equilibrium. If one Route A player deviates to Route C, the new allocation becomes (2, 3, 1), and the deviating player's Route C cost is <em>5(2 + 1) + 5(3 + 1) = 35</em>. The player reduces their cost from 43 to 35, so the social optimum is individually unstable.
+      </p>
+      <p>
+        The Nash allocation is <em>(x<sub>A</sub>, x<sub>B</sub>, x<sub>C</sub>) = (1, 1, 4)</em>. At this allocation, <em>C<sub>A</sub> = 53</em>, <em>C<sub>B</sub> = 53</em>, and <em>C<sub>C</sub> = 50</em>. Although Route C has lower current cost than A or B, Nash stability depends on unilateral deviations after accounting for the deviator's effect on congestion.
+      </p>
+      <p>
+        If a Route A player switches to Route C, the allocation becomes (0, 1, 5), and their new Route C cost is <em>5(0 + 5) + 5(1 + 5) = 55</em>, which is worse than 53. The same argument applies symmetrically for a Route B player. If a Route C player switches to Route A, the allocation becomes (2, 1, 3), and their new Route A cost is <em>5(2 + 3) + 28 = 53</em>, which is worse than 50. Therefore no agent has a profitable unilateral deviation, and (1, 1, 4) is a Nash equilibrium.
+      </p>
+      <p>
+        The total cost at Nash is <em>1 × 53 + 1 × 53 + 4 × 50 = 306</em>. The price of anarchy is therefore <em>306 / 258 = 51 / 43</em>, or about 1.19.
+      </p>
+      <p>
+        This makes Braess a useful stress test. The equilibrium is inefficient, unintuitive, and population-level. Agents must reason about route counts, congestion externalities, and unilateral deviations rather than simply choose a dominant action.
+      </p>
+      <p>
+        <strong>Evaluation metric.</strong> I measure stable Nash rate by round and final stable Nash rate. A trial is counted as stable Nash if the realized route-count allocation is the Nash allocation and is consistent through round 20.
+      </p>
+      <h3>Results</h3>
+      <p>
+        With a high reasoning budget, gpt-5.4 reaches 100% stable Nash equilibrium by round 20, meaning all trials reached and stayed at the equilibrium quantity without deviation by round 20.
+      </p>
+      <p>
+        Successful performance for all three model types was strongly gated on reasoning effort. All three models achieved modest success with high reasoning effort, and none of the models achieved success without reasoning effort. Model size was less strongly correlated with success, with little difference in performance between gpt-5.4-nano and gpt-5.4-mini, although gpt-5.4 clearly performed the strongest.
+      </p>
+      <figure>
+        <img src="{{ '/assets/llm-agents-nash/braess-stable-nash-by-round.png' | relative_url }}" alt="Braess stable Nash rate by round">
+        <figcaption>Figure 4. Braess stable Nash rate by round.</figcaption>
+      </figure>
+      <figure>
+        <img src="{{ '/assets/llm-agents-nash/braess-final-stable-nash-rate.png' | relative_url }}" alt="Braess final stable Nash rate by reasoning level">
+        <figcaption>Figure 5. Braess final stable Nash rate by reasoning level.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Takeaways</h2>
+      <p>
+        The results strongly contradict the claim that frontier LLM agents are inherently too cooperative to play Nash. Prisoner's Dilemma provides the cleanest test of that claim. If frontier models were fundamentally unwilling to select selfish behavior, this is where that should appear. It does not. gpt-5.4 chooses the selfish dominant action consistently across reasoning settings.
+      </p>
+      <p>
+        The results also contradict the claim that LLM agents lack the strategic reasoning to reach Nash equilibria. With sufficient reasoning, even gpt-5.4-nano computes the Nash quantity vector for Asymmetric Cournot and plays it from the first round.
+      </p>
+      <p>
+        Where LLM agent performance starts to break down is within highly complex environments that lack a dominant action and lack a static vector that each player can compute in isolation. Success in the Braess-style congestion game depends on route counts, congestion externalities, and expectations about what other agents will do. Even in this highly challenging environment, the frontier gpt-5.4 model achieved perfect convergence when allocated a high reasoning budget.
+      </p>
+      <p>
+        However, this suggests an important nuance: reasoning budget matters sharply. With gpt-5.4-nano on high reasoning achieving greater success than gpt-5.4 on low reasoning, it appears that strategic competence becomes inference-limited as the game becomes more multi-agent and less canonical.
+      </p>
+      <p>
+        These results are preliminary. The benchmark is small, with 10 trials per model/reasoning/game cell. The games are stylized, prompt details matter, and all agents within a run are controlled by the same model and reasoning setting. The congestion game measures convergence to a specific route-count equilibrium, not general strategic sophistication. "Reasoning level" is also an inference-time API setting, not a direct measure of cognition.
+      </p>
+      <p>
+        Still, the core conclusion is clear: frontier LLM agents can defect, compete, and converge, given sufficient reasoning. They are not too nice, or too dumb, to play Nash.
+      </p>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <ol class="references">
+        <li>Philip Brookins and Jason Matthew DeBacker, "Playing Games With GPT: What Can We Learn About a Large Language Model From Canonical Strategic Games?"</li>
+        <li>Elif Akata et al., "Playing repeated games with Large Language Models"</li>
+        <li>Nicolo Fontana, Francesco Pierri, and Luca Maria Aiello, "Nicer Than Humans: How do Large Language Models Behave in the Prisoner's Dilemma?"</li>
+        <li>"LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory"</li>
+        <li>"What Suppresses Nash Equilibrium Play in Large Language Models? Mechanistic Evidence and Causal Control"</li>
+        <li>"GTBench: Uncovering the Strategic Reasoning Limitations of LLMs via Game-Theoretic Evaluations"</li>
+        <li>"How Far Are We on the Decision-Making of LLMs? Evaluating LLMs' Gaming Ability in Multi-Agent Environments"</li>
+        <li>"Large Language Models Playing Mixed Strategy Nash Equilibrium Games"</li>
+        <li>"Game-theoretic LLM: Agent Workflow for Negotiation Games"</li>
+      </ol>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <div>Will Marella · Updated {{ 'now' | date: "%Y" }}</div>
+</footer>

@@ -55,7 +55,29 @@ title: Will Marella
 
   <section>
     <h2>Projects</h2>
-    <div class="projects">
+      <div class="projects">
+
+      <div class="project-card stacked-layout">
+        <div class="project-header">
+          <h3>LLM Agents and Nash Equilibria</h3>
+          <div class="project-tags">
+            <span class="tag accent">Research Note</span>
+            <span class="tag">Game Theory</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <p>
+            A small benchmark testing whether frontier LLM agents are too cooperative or too strategically limited to reach Nash equilibria in repeated games.
+          </p>
+          <p>
+            Across Prisoner's Dilemma, asymmetric Cournot competition, and a Braess-style congestion game, the main result is that agents can defect, compete, and converge, but complex multi-agent environments are sharply gated by inference-time reasoning.
+          </p>
+          <img src="{{ '/assets/llm-agents-nash/braess-stable-nash-by-round.png' | relative_url }}" alt="Braess stable Nash rate by round" class="stacked-media project-preview">
+          <div class="project-links">
+            <a href="{{ '/llm-agents-nash' | relative_url }}"><strong><em>Read post</em></strong></a>
+          </div>
+        </div>
+      </div>
 
       <div class="project-card text-wrap">
         <div class="project-header">

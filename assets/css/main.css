@@ -299,6 +299,10 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+.project-card.stacked-layout .project-preview {
+  max-width: 520px;
+}
+
 .project-text {
   max-width: 600px;
 }
@@ -436,6 +440,141 @@ footer {
   font-style: italic;
 }
 
+/* ── Long-form article ── */
+.article-main {
+  max-width: 760px;
+}
+
+.article-nav {
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+.article-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+}
+
+.article-header {
+  margin-bottom: 4rem;
+}
+
+.article-kicker {
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.article-header h1 {
+  font-size: clamp(2.25rem, 7vw, 4.1rem);
+  font-weight: 500;
+  line-height: 1.05;
+  margin-bottom: 1.4rem;
+}
+
+.article-dek {
+  color: var(--text-light);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.blog-post section {
+  margin-top: 3.6rem;
+}
+
+.blog-post h2 {
+  margin-bottom: 1.3rem;
+}
+
+.blog-post h3 {
+  font-size: 1.2rem;
+  margin: 2.2rem 0 0.8rem;
+}
+
+.blog-post p,
+.blog-post li {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.78;
+}
+
+.blog-post p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-post ul,
+.blog-post ol {
+  padding-left: 1.35rem;
+  margin: 0 0 1.4rem;
+}
+
+.blog-post li {
+  margin-bottom: 0.75rem;
+}
+
+.blog-post figure {
+  margin: 2.2rem 0 2.8rem;
+}
+
+.blog-post figure img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.blog-post figcaption {
+  color: var(--muted);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.92rem;
+  font-style: italic;
+  margin-top: 0.8rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.6rem 0 1.8rem;
+}
+
+.blog-post table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.blog-post th,
+.blog-post td {
+  border: 1px solid var(--border);
+  padding: 0.8rem 1rem;
+  text-align: center;
+}
+
+.blog-post th {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.equation {
+  color: var(--text);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.08rem;
+  overflow-x: auto;
+  padding: 0.9rem 1rem;
+  border-left: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.references li {
+  font-size: 0.98rem;
+}
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .header {
@@ -443,5 +582,13 @@ footer {
     align-items: flex-start;
     gap: 2rem;
     padding-bottom: 3rem;
+  }
+
+  .article-header h1 {
+    font-size: 2.35rem;
+  }
+
+  .article-dek {
+    font-size: 1.1rem;
   }
 }
