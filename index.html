@@ -106,7 +106,7 @@ title: Will Marella
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card text-wrap llm-agents-project">
         <div class="project-header">
           <h3>LLM Agents and Nash Equilibria</h3>
           <div class="project-tags">
@@ -115,18 +115,16 @@ title: Will Marella
           </div>
         </div>
         <div class="project-content">
-          <div class="project-text">
-            <p>
-              Existing literature suggests that LLM agents often fail in game-theoretic environments, with those failures commonly explained as either a limitation in strategic reasoning or a bias toward cooperative, prosocial behavior. I found that surprising, so I built my own benchmark to investigate it directly.
-            </p>
-            <p>
-              I evaluated agents on canonical and non-canonical multi-agent games designed to test whether models are willing to diverge from prosocial behavior in simple environments and whether they can succeed in highly complex strategic settings. The results show that frontier LLM agents are capable of competitive, equilibrium-seeking behavior, but that success depends sharply on inference-time reasoning.
-            </p>
-            <div class="project-links">
-              <a href="{{ '/llm-agents-nash' | relative_url }}"><strong><em>Read post</em></strong></a>
-            </div>
+          <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark" class="wrap-image">
+          <p>
+            Existing literature suggests that LLM agents often fail in game-theoretic environments, with those failures commonly explained as either a limitation in strategic reasoning or a bias toward cooperative, prosocial behavior. I found that surprising, so I built my own benchmark to investigate it directly.
+          </p>
+          <p>
+            I evaluated agents on canonical and non-canonical multi-agent games designed to test whether models are willing to diverge from prosocial behavior in simple environments and whether they can succeed in highly complex strategic settings. The results show that frontier LLM agents are capable of competitive, equilibrium-seeking behavior, but that success depends sharply on inference-time reasoning.
+          </p>
+          <div class="project-links">
+            <a href="{{ '/llm-agents-nash' | relative_url }}"><strong><em>Read post</em></strong></a>
           </div>
-          <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark">
         </div>
       </div>
 

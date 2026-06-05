@@ -277,6 +277,10 @@ h2 {
   margin: 0 0 1.5rem 2rem;
 }
 
+.project-card.llm-agents-project .wrap-image {
+  width: 350px;
+}
+
 /* Stacked layout: text above, media below */
 .project-card.stacked-layout .project-content {
   display: flex;
