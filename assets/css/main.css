@@ -303,6 +303,10 @@ h2 {
   max-width: 520px;
 }
 
+.project-card.media-left .project-content {
+  grid-template-columns: auto 1fr;
+}
+
 .project-text {
   max-width: 600px;
 }
