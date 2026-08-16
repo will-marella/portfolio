@@ -1,275 +1,208 @@
 ---
-layout: default
+layout: concept-framed
 title: Will Marella
+description: Statistical research, software, and independent experiments by Will Marella.
 ---
 
-<main>
-
-  <div class="header">
-    <img src="{{ '/assets/pic_w_bao.png' | relative_url }}" alt="Will Marella" class="profile-pic">
-
-    <div class="info-card">
-      <h1>Will Marella</h1>
-      <div class="role-group">
-        <p class="role">Senior Data Scientist, Columbia Aging Center</p>
+<main id="top">
+  <section class="intro intro-profile" aria-labelledby="profile-name">
+    <figure class="portrait">
+      <img src="{{ '/assets/pic_w_bao.png' | relative_url }}"
+        alt="Will Marella standing on a rocky shoreline with a dog" width="771" height="1028">
+    </figure>
+    <div class="intro-copy profile-copy">
+      <h1 class="profile-name" id="profile-name">Will Marella</h1>
+      <p class="profile-role">Senior Data Scientist, Columbia Aging Center</p>
+      <div class="profile-details">
+        <p>MPhil, Population Health Sciences, University of Cambridge</p>
+        <p>BA, Biology, Brown University</p>
+        <p class="profile-location">New York, NY</p>
       </div>
-      <div class="education-group">
-        <p class="degree">MPhil, Population Health Sciences, University of Cambridge</p>
-        <p class="degree">BA, Biology, Brown University</p>
-      </div>
-      <p class="location">New York, NY</p>
-
-      <nav class="links">
-        <a href="mailto:wtmarella@gmail.com">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-          </svg>
-          Email
-        </a>
-        <a href="{{ '/assets/WilliamMarellaResume.pdf' | relative_url }}" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-          </svg>
-          CV
-        </a>
-        <a href="https://www.linkedin.com/in/will-marella-3862921a9/" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-            <rect x="2" y="9" width="4" height="12" />
-            <circle cx="4" cy="4" r="2" />
-          </svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/will-marella" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-          </svg>
-          GitHub
-        </a>
+      <nav class="contact-links" aria-label="Contact links">
+        <a href="mailto:wtmarella@gmail.com">Email</a>
+        <a href="{{ '/assets/WilliamMarellaResume.pdf' | relative_url }}" target="_blank" rel="noopener">CV ↗</a>
+        <a href="https://github.com/will-marella" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/will-marella-3862921a9/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </nav>
-    </div>
-  </div>
-
-  <section>
-    <h2>Projects</h2>
-      <div class="projects">
-
-      <div class="project-card text-wrap">
-        <div class="project-header">
-          <h3>FraminghamPACE</h3>
-          <div class="project-tags">
-            <span class="tag accent">Research</span>
-            <span class="tag green">Licensed · Patent Pending</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <img src="{{ '/assets/full_biomarker_spaghetti.jpg' | relative_url }}"
-            alt="FraminghamPACE biomarker trajectories" class="wrap-image" loading="lazy" decoding="async">
-          <p>
-            Aging unfolds across organ systems, leaving its mark in your bloodwork over time. Plotting nearly 40 years of longitudinal biomarker data from the Framingham Heart Study (right) you see an immense amount of variability, but each individual carries a coherent signal across biomarkers.
-          </p>
-          <p>
-            I designed and implemented the modeling pipeline end to end. First, I formulated a hierarchical mixed effects model to distill these data into a single latent aging phenotype, producing robust, per-person estimates of pace of aging. Then I trained an epigenomic predictor that enables measurement from a single blood draw.
-          </p>
-          <p>
-            The resulting epigenetic clock, FraminghamPACE, is now licensed and patent pending, with me as co-lead inventor. The first-author manuscript is currently under review and available as a preprint on medRxiv.
-          </p>
-          <div class="project-links">
-            <a href="https://www.medrxiv.org/content/10.64898/2026.07.07.26357388v2" target="_blank"><strong><em>→ medRxiv</em></strong></a>
-          </div>
-        </div>
-      </div>
-
-      
-      <div class="project-card stacked-layout">
-        <div class="project-header">
-          <h3>QueryGaP</h3>
-          <div class="project-tags">
-            <span class="tag accent">AI Agent</span>
-            <span class="tag">Deployed</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <p>
-            dbGaP is one of the largest repositories of genotype-phenotype data in the world. The online site serves data documentation for 3,000 studies, including many that I work with daily. Tired of manually surfing their documentation online, I built QueryGaP.
-          </p>
-          <p>
-            To build it, I scraped the full dbGaP catalog (3,000 studies, 450,000 variables) into a PostgreSQL database with hybrid search (tsvector for keyword matching, pgvector for semantic similarity), then built a ReAct-style AI agent that queries the database and returns relevant results conversationally from a natural language prompt. Deployed publicly.
-          </p>
-          <video src="{{ '/assets/QueryGaPThinks.mp4' | relative_url }}" autoplay loop muted playsinline preload="metadata" class="wide-video stacked-media"></video>
-          <div class="project-links">
-            <a href="https://querygap.org/" target="_blank"><strong><em>→ Site</em></strong></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card text-wrap llm-agents-project">
-        <div class="project-header">
-          <h3>LLM Agents and Nash Equilibria</h3>
-          <div class="project-tags">
-            <span class="tag accent">AI Agents</span>
-            <span class="tag">Game Theory</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}" alt="Experimental schematic for the repeated game benchmark" class="wrap-image" loading="lazy" decoding="async">
-          <p>
-            Existing literature suggests that LLM agents often fail in game-theoretic environments, with those failures commonly explained as either a limitation in strategic reasoning or a bias toward cooperative, prosocial behavior. I found that surprising, so I built my own benchmark to investigate it directly.
-          </p>
-          <p>
-            I evaluated agents on canonical and non-canonical multi-agent games designed to test whether models are willing to diverge from prosocial behavior in simple environments and whether they can succeed in highly complex strategic settings. The results show that frontier LLM agents are capable of competitive, equilibrium-seeking behavior, but that success depends sharply on inference-time reasoning.
-          </p>
-          <div class="project-links">
-            <a href="{{ '/llm-agents-nash' | relative_url }}"><strong><em>Read post</em></strong></a>
-            <a href="https://github.com/will-marella/multi-agent-nash-evals" target="_blank"><strong><em>GitHub</em></strong></a>
-          </div>
-        </div>
-      </div>
-
-      
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Latent Factor Allocation (LFA)</h3>
-          <div class="project-tags">
-            <span class="tag accent">Research</span>
-            <span class="tag">Bayesian</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-text">
-            <p>
-              For my MPhil dissertation at Cambridge, I worked on Latent Factor Allocation (LFA), a probabilistic topic model designed to discover genetic variants that drive risk across multiple diseases.
-            </p>
-            <p>
-              Exact inference methods exist (e.g. MCMC), but they don't scale. I derived a mean-field variational inference algorithm that makes the model tractable on datasets the size of the UK Biobank. I implemented this algorithm and a partially collapsed Gibbs sampler from scratch in NumPy and SciPy to compare these methods.
-            </p>
-            <p>
-              I've continued on this project as a part-time Visiting Researcher at Cambridge.
-            </p>
-            <div class="project-links">
-              <a href="{{ '/assets/MPhil_Dissertation.pdf' | relative_url }}" target="_blank"><strong><em>→ Dissertation</em></strong></a>
-              <a href="https://github.com/will-marella/LFA" target="_blank"><strong><em>→ GitHub</em></strong></a>
-            </div>
-          </div>
-          <img src="{{ '/assets/LFA-DGM.jpg' | relative_url }}" alt="LFA-DGM model diagram" loading="lazy" decoding="async">
-        </div>
-      </div>
-
-      
-      <div class="project-card">
-        <div class="project-header">
-          <h3>ascii-doodle</h3>
-          <div class="project-tags">
-            <span class="tag">Generative AI</span>
-            <span class="tag">From Scratch</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-text">
-            <p>
-              Text-to-ASCII art via a 300M parameter diffusion model I trained from scratch on Modal A100s.
-            </p>
-            <p>
-              A CLIP-conditioned Diffusion Transformer (DiT) trained with flow matching generates over a VAE-compressed latent space of 32x16 ASCII token grids. Trained on Google Quick, Draw!. At inference time, classifier-free guidance lets you dial prompt fidelity vs. diversity.
-            </p>
-            <p>
-              The CLIP conditioning gives the model semantic flexibility: it generalizes across synonyms and paraphrases it never saw as training labels, and occasionally produces plausible blends on near-out-of-distribution prompts.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/will-marella/ascii-doodle" target="_blank"><strong><em>→ GitHub</em></strong></a>
-            </div>
-          </div>
-          <img src="{{ '/assets/ascii-doodle-process.gif' | relative_url }}" alt="ascii-doodle generation process" loading="lazy" decoding="async">
-        </div>
-      </div>
-
-      
-      <div class="project-card">
-        <div class="project-header">
-          <h3>OpenCode Protect</h3>
-          <div class="project-tags">
-            <span class="tag">Security</span>
-            <span class="tag">Open Source</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-text">
-            <p>
-              AI coding agents often run with full filesystem access. Existing protections are largely at the prompt-level, easily bypassed by injection attacks.
-            </p>
-            <p>
-              Often working with sensitive data, I also want to ensure that I can use AI coding agents without risking agents reading sensitive files.
-            </p>
-            <p>
-              OpenCode Protect solves these problems at the OS level. Commands run as a restricted Unix user without permission to access protected files, providing kernel-level security for sensitive files.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean" target="_blank"><strong><em>→ GitHub</em></strong></a>
-            </div>
-          </div>
-          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}" alt="OpenCode Protect demo" loading="lazy" decoding="async">
-        </div>
-      </div>
-
-      
-      <div class="project-card">
-        <div class="project-header">
-          <h3>ascii-dream</h3>
-          <div class="project-tags">
-            <span class="tag">CLI Tool</span>
-            <span class="tag">Fun</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-text">
-            <p>
-              Command-line tool that generates dream-like ASCII art via LTX-Video, with GPU inference handled on-demand through Modal.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/will-marella/ascii-dream" target="_blank"><strong><em>→ GitHub</em></strong></a>
-              <a href="{{ '/ascii-dream' | relative_url }}"><strong><em>→ See more</em></strong></a>
-            </div>
-          </div>
-          <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="ascii-dream demo" loading="lazy" decoding="async">
-        </div>
-      </div>
-
-      
-      <div class="project-card">
-        <div class="project-header">
-          <h3>CostcoGuessr</h3>
-          <div class="project-tags">
-            <span class="tag">Web App</span>
-            <span class="tag">Deployed</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-text">
-            <p>
-              Daily Costco price guessing game with 10,000+ real Costco products across eleven countries.
-            </p>
-            <p>
-              Product data scraped (compliant with terms of service!), cleaned, and stored into a PostgreSQL database which services a Bun/Hono backend hosted on Railway and Next.js frontend hosted on Vercel. User analytics tracked via a lightweight PostgreSQL database and with PostHog.
-            </p>
-            <p>
-              Reached 200+ daily users.
-            </p>
-            <div class="project-links">
-              <a href="https://costcoguessr.com/play" target="_blank"><strong><em>→ Site</em></strong></a>
-            </div>
-          </div>
-          <video src="{{ '/assets/CG Draft1.mp4' | relative_url }}" autoplay loop muted playsinline preload="metadata" onloadedmetadata="this.playbackRate = 0.75;"></video>
-        </div>
-      </div>
-
     </div>
   </section>
 
-</main>
+  <section class="work" id="work" aria-label="Selected work">
+    <article class="project project-feature project-framingham">
+      <div class="project-copy">
+        <h2>Estimating a person’s pace of aging from a single blood draw</h2>
+        <p class="project-summary">
+          Using nearly four decades of biomarker data, I built a hierarchical model to estimate each person’s pace of
+          aging, then trained an epigenomic predictor so the same measure could be estimated from DNA methylation.
+        </p>
+        <p class="project-takeaway">FraminghamPACE is licensed and patent pending; I am co-lead inventor and first author.</p>
+        <div class="project-links">
+          <a class="project-link" href="https://www.medrxiv.org/content/10.64898/2026.07.07.26357388v2"
+            target="_blank" rel="noopener">Read the preprint ↗</a>
+          <a class="project-link" href="https://github.com/will-marella/FraminghamPACE" target="_blank"
+            rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <figure class="artifact artifact-framingham">
+        <img src="{{ '/assets/full_biomarker_spaghetti.jpg' | relative_url }}"
+          alt="Longitudinal biomarker trajectories from the Framingham Heart Study" width="1400" height="1400">
+        <figcaption>Nearly four decades of repeated biomarker measurements. Each color is one person.</figcaption>
+      </figure>
+    </article>
 
-<footer>
-  <div>Will Marella · Updated {{ 'now' | date: "%Y" }}</div>
-</footer>
+    <article class="project project-feature project-querygap">
+      <div class="project-copy">
+        <h2>Searching 450,000 study variables in plain English</h2>
+        <p class="project-summary">
+          I built QueryGaP because I was tired of digging through dbGaP documentation by hand. It indexes 3,000 studies
+          and 450,000 variables with hybrid search and an agent. Researchers can use it through a public web app or
+          directly from ChatGPT and Claude via MCP.
+        </p>
+        <div class="project-links">
+          <a class="project-link" href="https://querygap.org/" target="_blank" rel="noopener">Try QueryGaP ↗</a>
+          <a class="project-link" href="https://github.com/will-marella/querygap-mcp" target="_blank"
+            rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="querygap-mcp-column">
+        <figure class="artifact artifact-querygap-mcp">
+          <img src="{{ '/assets/querygap-mcp-overview.svg' | relative_url }}"
+            alt="QueryGaP connects ChatGPT and Claude to linked dbGaP study, dataset, variable, summary-statistics, and documentation results"
+            loading="lazy" decoding="async">
+          <figcaption>The MCP resolves research intent to exact studies, datasets, variables, and source-linked metadata.</figcaption>
+        </figure>
+        <p class="project-takeaway">Results resolve to exact studies, datasets, variables, and links to the source documentation.</p>
+      </div>
+    </article>
+
+    <article class="project project-feature project-reasoning">
+      <div class="project-copy">
+        <h2>Forecasting reasoning length from model internals</h2>
+        <p class="project-summary">
+          I built a 10,000-prompt benchmark to test whether an LLM’s internal state after reading a prompt predicts how
+          long its response will be before generation begins.
+        </p>
+        <p class="project-takeaway">On 1,000 untouched Qwen3/OASST2 prompts, a frozen state model averaged 169 fewer tokens of absolute error than a strong text-only ensemble (95% CI: 129–209).</p>
+        <a class="project-link" href="{{ '/forecasting-reasoning-length/' | relative_url }}">Read the study →</a>
+      </div>
+      <figure class="artifact artifact-reasoning">
+        <img src="{{ '/assets/forecasting-reasoning-length-hero.svg' | relative_url }}"
+          alt="Five thousand output lengths from 500 prompts, ordered by a held-out state forecast" loading="lazy"
+          decoding="async">
+        <figcaption>Ten generations per prompt reveal both forecastable structure and substantial stochastic variation.</figcaption>
+      </figure>
+    </article>
+
+    <div class="project-grid">
+      <article class="project project-card project-nash">
+        <figure class="artifact artifact-nash">
+          <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}"
+            alt="Experimental schematic for repeated multi-agent games" width="1800" height="1262" loading="lazy"
+            decoding="async">
+        </figure>
+        <div class="project-copy">
+          <h2>Can language-model agents find Nash equilibria?</h2>
+          <p class="project-summary">
+            I built repeated-game environments to distinguish two explanations: are language models reluctant to act
+            selfishly, or do they struggle with strategic reasoning? They did pursue competitive equilibria; as games
+            became harder and less familiar, additional inference-time reasoning mattered more.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="{{ '/llm-agents-nash/' | relative_url }}">Read the study →</a>
+            <a class="project-link" href="https://github.com/will-marella/multi-agent-nash-evals" target="_blank"
+              rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-card project-lfa">
+        <figure class="artifact">
+          <img src="{{ '/assets/LFA-DGM.jpg' | relative_url }}" alt="Graphical model for Latent Factor Allocation"
+            width="964" height="664" loading="lazy" decoding="async">
+        </figure>
+        <div class="project-copy">
+          <h2>Scaling a model of shared genetic risk to UK Biobank-sized data</h2>
+          <p class="project-summary">
+            For my Cambridge dissertation, I derived a mean-field variational inference algorithm for Latent Factor
+            Allocation, a Bayesian model of shared genetic risk, making it tractable at UK Biobank scale. I implemented
+            it alongside a partially collapsed Gibbs sampler in NumPy and SciPy.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="{{ '/assets/MPhil_Dissertation.pdf' | relative_url }}" target="_blank"
+              rel="noopener">Dissertation ↗</a>
+            <a class="project-link" href="https://github.com/will-marella/LFA" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-card project-ascii-doodle">
+        <figure class="artifact artifact-dark">
+          <img src="{{ '/assets/ascii-doodle-process.gif' | relative_url }}"
+            alt="A bicycle emerging during an ASCII diffusion process" width="504" height="540" loading="lazy"
+            decoding="async">
+        </figure>
+        <div class="project-copy">
+          <h2>Training a diffusion model to draw in ASCII</h2>
+          <p class="project-summary">
+            I trained a 300-million-parameter CLIP-conditioned Diffusion Transformer from scratch, using flow matching
+            over compressed ASCII token grids.
+          </p>
+          <a class="project-link" href="https://github.com/will-marella/ascii-doodle" target="_blank"
+            rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="project project-card project-protect">
+        <figure class="artifact artifact-dark">
+          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}"
+            alt="Terminal demonstration of a coding agent being denied access to a protected file" width="962"
+            height="618" loading="lazy" decoding="async">
+        </figure>
+        <div class="project-copy">
+          <h2>Keeping coding agents away from sensitive files</h2>
+          <p class="project-summary">
+            I wanted a way to use coding agents around sensitive research files without relying on the model to behave.
+            I modified OpenCode so agent commands run as a restricted Unix user, letting filesystem permissions—not the
+            agent—decide what it can read.
+          </p>
+          <a class="project-link" href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean"
+            target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="project project-card project-ascii-dream">
+        <figure class="artifact artifact-dark">
+          <img src="{{ '/assets/ascii-demo.gif' | relative_url }}" alt="Dream-like animated ASCII landscape"
+            width="820" height="516" loading="lazy" decoding="async">
+        </figure>
+        <div class="project-copy">
+          <h2>Generating animated ASCII from a command-line prompt</h2>
+          <p class="project-summary">
+            I built a CLI that turns a text prompt into dream-like ASCII animation, with LTX-Video generation and
+            on-demand GPU inference through Modal.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="{{ '/ascii-dream/' | relative_url }}">Gallery →</a>
+            <a class="project-link" href="https://github.com/will-marella/ascii-dream" target="_blank"
+              rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-card project-costco">
+        <figure class="artifact">
+          <video id="costco-demo" src="{{ '/assets/CG Draft1.mp4' | relative_url }}" autoplay loop muted playsinline
+            preload="metadata" aria-label="CostcoGuessr daily price guessing game" data-playback-rate="0.75"></video>
+        </figure>
+        <div class="project-copy">
+          <h2>Turning Costco’s international catalog into a daily price game</h2>
+          <p class="project-summary">
+            I scraped and cleaned 10,000 products from Costco sites across eleven countries, then built CostcoGuessr, a
+            full-stack daily price game around them. It reached more than 200 daily users.
+          </p>
+          <a class="project-link" href="https://costcoguessr.com/play" target="_blank" rel="noopener">Play ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
