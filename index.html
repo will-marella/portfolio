@@ -94,6 +94,41 @@ description: Statistical research, software, and independent experiments by Will
     </article>
 
     <div class="project-grid">
+      <article class="project project-card project-ascii-doodle">
+        <figure class="artifact artifact-dark">
+          <img src="{{ '/assets/ascii-doodle-process.gif' | relative_url }}"
+            alt="A bicycle emerging during an ASCII diffusion process" width="504" height="540" loading="lazy"
+            decoding="async">
+        </figure>
+        <div class="project-copy">
+          <h2>Training a diffusion model to draw in ASCII</h2>
+          <p class="project-summary">
+            I trained a 300-million-parameter CLIP-conditioned Diffusion Transformer from scratch, using flow matching
+            over compressed ASCII token grids.
+          </p>
+          <a class="project-link" href="https://github.com/will-marella/ascii-doodle" target="_blank"
+            rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="project project-card project-protect">
+        <figure class="artifact artifact-dark">
+          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}"
+            alt="Terminal demonstration of a coding agent being denied access to a protected file" width="962"
+            height="618" loading="lazy" decoding="async">
+        </figure>
+        <div class="project-copy">
+          <h2>Keeping coding agents away from sensitive files</h2>
+          <p class="project-summary">
+            I wanted a way to use coding agents around sensitive research files without relying on the model to behave.
+            I modified OpenCode so agent commands run as a restricted Unix user, letting filesystem permissions—not the
+            agent—decide what it can read.
+          </p>
+          <a class="project-link" href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean"
+            target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
       <article class="project project-card project-nash">
         <figure class="artifact artifact-nash">
           <img src="{{ '/assets/llm-agents-nash/experimental-schematic.png' | relative_url }}"
@@ -132,41 +167,6 @@ description: Statistical research, software, and independent experiments by Will
               rel="noopener">Dissertation ↗</a>
             <a class="project-link" href="https://github.com/will-marella/LFA" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
-        </div>
-      </article>
-
-      <article class="project project-card project-ascii-doodle">
-        <figure class="artifact artifact-dark">
-          <img src="{{ '/assets/ascii-doodle-process.gif' | relative_url }}"
-            alt="A bicycle emerging during an ASCII diffusion process" width="504" height="540" loading="lazy"
-            decoding="async">
-        </figure>
-        <div class="project-copy">
-          <h2>Training a diffusion model to draw in ASCII</h2>
-          <p class="project-summary">
-            I trained a 300-million-parameter CLIP-conditioned Diffusion Transformer from scratch, using flow matching
-            over compressed ASCII token grids.
-          </p>
-          <a class="project-link" href="https://github.com/will-marella/ascii-doodle" target="_blank"
-            rel="noopener">GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="project project-card project-protect">
-        <figure class="artifact artifact-dark">
-          <img src="{{ '/assets/OpenCodeProtectDemo.gif' | relative_url }}"
-            alt="Terminal demonstration of a coding agent being denied access to a protected file" width="962"
-            height="618" loading="lazy" decoding="async">
-        </figure>
-        <div class="project-copy">
-          <h2>Keeping coding agents away from sensitive files</h2>
-          <p class="project-summary">
-            I wanted a way to use coding agents around sensitive research files without relying on the model to behave.
-            I modified OpenCode so agent commands run as a restricted Unix user, letting filesystem permissions—not the
-            agent—decide what it can read.
-          </p>
-          <a class="project-link" href="https://github.com/will-marella/opencode/tree/feature/protected-mode-clean"
-            target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </article>
 
